@@ -8,12 +8,6 @@ pipeline{
             }
         }
 
-        stage("Acceptance test") {
-            steps {
-                sh "npm test"
-            }
-        }
-
         stage("Docker build") {
             steps {
                 sh "docker build -t thinksec/dockerize-node ."
