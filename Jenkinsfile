@@ -4,13 +4,12 @@ pipeline{
     stages {
         stage("Checkout") {
             steps {
-                git branch: 'master', url: 'https://bitbucket.org/chicho2020/devops-challenge.git'
+                git branch: 'main', url: 'https://github.com/jrios83/devops-challenge.git'
             }
         }
 
         stage("Acceptance test") {
             steps {
-                sleep 60
                 sh "npm test"
             }
         }
