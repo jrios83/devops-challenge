@@ -13,5 +13,12 @@ pipeline{
                 sh "docker build -t thinksec/dockerize-node ."
             }
         }
+
+        stage("Deploy to staging") {
+            steps {
+                sh "docker run -p 49160:3000 -d thinksec/dockerize-node"
+            }
+        }
+
     }
 }
