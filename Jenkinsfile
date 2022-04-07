@@ -20,11 +20,11 @@ pipeline{
             }
         }
 
-        stage("Acceptance test") {
+        /*stage("Acceptance test") {
             steps {
                 sh "npm test"
             }
-        }
+        }*/
 
     }
 }
