@@ -20,5 +20,11 @@ pipeline{
             }
         }
 
+        stage("Acceptance test") {
+            steps {
+                sh "npm test"
+            }
+        }
+
     }
 }

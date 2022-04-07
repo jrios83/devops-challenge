@@ -21,7 +21,7 @@ resource "aws_instance" "devops-example" {
   ami             = "ami-00ee4df451840fa9d" # Amazon Linux 2 AMI (HVM) // us-west-2
   instance_type   = "t3a.nano"
   security_groups = [aws_security_group.allow_lisp_ports.name]
-  key_name = "msmrKey"
+  key_name = "devopsKey"
 }
 
 data "aws_vpc" "default_vpc" {
@@ -46,12 +46,12 @@ resource "aws_security_group" "allow_lisp_ports" {
         from_port = 22
         to_port = 22
         protocol = "tcp"
-        cidr_blocks = ["11.22.33.44/8"]
+        cidr_blocks = ["11.22.33.44/32"]
     }
 }
 
 resource "aws_ebs_volume" "diskVol" {
- availability_zone = "us-west-2"
+ availability_zone = "us-west-2d"
  size = 20
  tags = {
         Name = "diskVolume"
@@ -70,7 +70,7 @@ resource "tls_private_key" "pk" {
   rsa_bits  = 4096
 }
 
-resource "aws_key_pair" "msmrKey" {
+resource "aws_key_pair" "devopsKey" {
   key_name   = "devopsKey"      
   public_key = tls_private_key.pk.public_key_openssh
 
