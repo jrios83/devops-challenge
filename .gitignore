@@ -2,3 +2,4 @@
 node_modules
 Terraform/*.terraform*
 Terraform/*.tfstate*
+Terraform/terraform-provider*
