@@ -1,5 +1,5 @@
-.idea
-node_modules
+#.idea
+#node_modules
 Terraform/*.terraform*
 Terraform/*.tfstate*
 Terraform/.terraform
