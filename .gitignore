@@ -2,4 +2,4 @@
 node_modules
 Terraform/*.terraform*
 Terraform/*.tfstate*
-Terraform/.terraform/providers/registry.terraform.io/hashicorp/aws/3.75.1/linux_amd64/terraform-provider*
+Terraform/.terraform
